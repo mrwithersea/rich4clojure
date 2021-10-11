@@ -18,7 +18,7 @@
 ;; default value and a sequence of keys and constructs a
 ;; map.
 
-(def __ :tests-will-fail)
+(def __ #(zipmap %2 (repeat %)))
 
 (comment
   
