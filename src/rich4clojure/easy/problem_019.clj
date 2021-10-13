@@ -11,10 +11,15 @@
 
 (def restricted [last])
 
-(def __ :tests-will-fail)
+(def __ #(first (reverse %)))
 
 (comment
+  ;; just playing with threading
+  (def __ #(-> %
+               reverse
+               first))
   
+  (__ [1 2 3 4 5])
   )
 
 (tests

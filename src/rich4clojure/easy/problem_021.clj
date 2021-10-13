@@ -11,7 +11,7 @@
 
 (def restricted [nth])
 
-(def __ :tests-will-fail)
+(def __ #(first (drop %2 %1)))
 
 (comment
   

@@ -9,11 +9,18 @@
 ;; Write a function which returns the first X fibonacci
 ;; numbers.
 
-(def __ :tests-will-fail)
+(def __ #(loop [acc '[] x 0 y 1]
+           (if (= (count acc) %)
+             acc
+             (recur (conj acc y) y (+ x y)))))
 
 (comment
-  
+  (#(take %
+          (map first
+               (iterate (fn [[a b]] [b (+ a b)]) [1 1]))) 8)
   )
+
+
 
 (tests
   (__ 3) := '(1 1 2)

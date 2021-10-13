@@ -10,10 +10,15 @@
 
 (def restricted [reverse rseq])
 
-(def __ :tests-will-fail)
+(def __ #(loop [items % acc ()]
+           (if (empty? items)
+             acc
+             (recur (rest items) (conj acc (first items))))))
 
 (comment
-  
+  (#(into () %) [1 2 3 4 5]) ; very clever
+
+  (#(reduce conj () %) [1 2 3 4 5]) ; also very clever
   )
 
 (tests

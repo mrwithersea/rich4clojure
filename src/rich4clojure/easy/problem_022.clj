@@ -11,10 +11,13 @@
 
 (def restricted [count])
 
-(def __ :tests-will-fail)
+(def __ #(loop [items % total 0]
+           (if (empty? items)
+             total
+             (recur (rest items) (inc total)))))
 
 (comment
-  
+  (#(reduce (fn [acc _] (inc acc)) 0 %) '(1 2 3 3 1))
   )
 
 (tests

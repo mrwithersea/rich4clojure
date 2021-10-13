@@ -9,10 +9,10 @@
 ;; Write a function which returns the sum of a sequence of
 ;; numbers.
 
-(def __ :tests-will-fail)
+(def __ (partial reduce +))
 
 (comment
-  
+   (#(reduce + %)[1 2 3])
   )
 
 (tests
