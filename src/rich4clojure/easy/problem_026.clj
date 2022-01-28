@@ -9,7 +9,7 @@
 ;; Write a function which returns the first X fibonacci
 ;; numbers.
 
-(def __ #(loop [acc '[] x 0 y 1]
+(def __ #(loop [acc [] x 0 y 1]
            (if (= (count acc) %)
              acc
              (recur (conj acc y) y (+ x y)))))
@@ -18,6 +18,10 @@
   (#(take %
           (map first
                (iterate (fn [[a b]] [b (+ a b)]) [1 1]))) 8)
+  
+  (iterate (fn [[a b]] [b (+ a b)]) [1 1])
+
+  
   )
 
 

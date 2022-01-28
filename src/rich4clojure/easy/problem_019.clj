@@ -15,8 +15,7 @@
 
 (comment
   ;; just playing with threading
-  (def __ #(-> %
-               reverse
+  (def __ #(-> reverse
                first))
   
   (__ [1 2 3 4 5])
